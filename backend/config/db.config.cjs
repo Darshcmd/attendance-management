@@ -31,8 +31,7 @@ async function connectDatabases() {
                 retryWrites: true,
                 retryReads: true,
                 ssl: true,
-                tlsAllowInvalidCertificates: true, // For Railway compatibility
-                tlsInsecure: false,
+                tlsAllowInvalidCertificates: true,
                 socketTimeoutMS: 45000,
                 serverSelectionTimeoutMS: 10000,
                 connectTimeoutMS: 10000,
