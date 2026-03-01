@@ -7,7 +7,7 @@ import {
     postDone,
     doneSuccess
 } from './teacherSlice';
-const REACT_APP_BASE_URL = "https://attendance-management-c79l.onrender.com";
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL || "";
 
 export const getAllTeachers = (id) => async (dispatch) => {
     dispatch(getRequest());

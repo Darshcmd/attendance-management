@@ -5,7 +5,7 @@ import {
     getFailed,
     getError
 } from './noticeSlice';
-const REACT_APP_BASE_URL = "https://attendance-management-c79l.onrender.com";
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL || "";
 
 export const getAllNotices = (id, address) => async (dispatch) => {
     dispatch(getRequest());
