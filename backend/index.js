@@ -14,10 +14,6 @@ dotenv.config();
 app.use(express.json({ limit: '10mb' }))
 app.use(cors())
 
-// Serve static files from frontend build
-const frontendBuildPath = path.join(__dirname, '../frontend/build');
-app.use(express.static(frontendBuildPath));
-
 // Connect to MongoDB using native client
 async function startServer() {
     try {
@@ -48,10 +44,14 @@ async function startServer() {
         app.locals.databases = databases;
         app.locals.dbConfig = dbConfig;
 
-        // Routes
+        // API Routes FIRST (before static files)
         app.use('/', Routes);
 
-        // Serve index.html for React Router (catch-all route)
+        // THEN serve static files from frontend build
+        const frontendBuildPath = path.join(__dirname, '../frontend/build');
+        app.use(express.static(frontendBuildPath));
+
+        // Serve index.html for React Router (catch-all route LAST)
         app.get('*', (req, res) => {
             res.sendFile(path.join(frontendBuildPath, 'index.html'));
         });
