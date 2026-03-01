@@ -24,9 +24,8 @@ const Homepage = () => {
                             Management System
                         </StyledTitle>
                         <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
-                            Seamlessly track attendance, assess performance, and provide feedback.
-                            Access records, view marks, and communicate effortlessly.
+                            Web Programming project by Darsh Soni, Ayushi Tewari, and Pritisha Mishra presents
+                            a modern, scalable MERN stack web application powered by Docker, designed for smooth, efficient, and reliable academic management.
                         </StyledText>
                         <StyledBox>
                             <StyledLink to="/choose">
