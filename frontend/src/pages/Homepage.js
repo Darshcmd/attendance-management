@@ -4,10 +4,12 @@ import { Container, Grid, Box, Button } from '@mui/material';
 import styled from 'styled-components';
 import Students from "../assets/gr.png";
 import { LightPurpleButton } from '../components/buttonStyles';
+import ProjectCredits from '../components/ProjectCredits';
 
 const Homepage = () => {
     return (
-        <StyledContainer>
+        <>
+            <StyledContainer>
             <Grid style={{flex:1,justifyItems:"center",alignItems:"center"}} container spacing={0}>
                 <Grid item xs={12} md={6}>
                     <img src={Students} alt="students" style={{ width: '100%' }} />
@@ -50,7 +52,9 @@ const Homepage = () => {
                 </Grid>
             </Grid>
         </StyledContainer>
-    );
+        <ProjectCredits />
+    </>
+);
 };
 export default Homepage;
 

@@ -13,6 +13,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/userRelated/userHandle';
 import Popup from '../components/Popup';
+import ProjectCredits from '../components/ProjectCredits';
 
 const ChooseUser = ({ visitor }) => {
   const dispatch = useDispatch()
@@ -83,7 +84,8 @@ const ChooseUser = ({ visitor }) => {
   }, [status, currentRole, navigate, currentUser]);
 
   return (
-    <StyledContainer>
+    <>
+      <StyledContainer>
       <Container>
         <Grid container spacing={2} justifyContent="center">
           <Grid item xs={12} sm={6} md={4}>
@@ -127,6 +129,8 @@ const ChooseUser = ({ visitor }) => {
           </Grid>
         </Grid>
       </Container>
+      </StyledContainer>
+      <ProjectCredits />
       <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={loader}
@@ -135,7 +139,7 @@ const ChooseUser = ({ visitor }) => {
         Please Wait
       </Backdrop>
       <Popup message={message} setShowPopup={setShowPopup} showPopup={showPopup} />
-    </StyledContainer>
+    </>
   );
 };
 
