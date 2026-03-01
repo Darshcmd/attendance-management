@@ -14,7 +14,7 @@ const Complain = require('../models/complainSchema.js');
 
 //         const admin = new Admin({
 //             ...req.body,
-//             password: hashedPass
+//             password: hashedPa ss
 //         });
 
 //         const existingAdminByEmail = await Admin.findOne({ email: req.body.email });
