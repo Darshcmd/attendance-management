@@ -16,6 +16,9 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+ENV NODE_ENV=production
+ENV NODE_OPTIONS=--max_old_space_size=512
+
 # Copy backend files
 COPY backend/package*.json ./
 RUN npm ci --only=production

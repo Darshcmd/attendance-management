@@ -27,7 +27,15 @@ async function connectDatabases() {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 maxPoolSize: 10,
+                minPoolSize: 2,
                 retryWrites: true,
+                retryReads: true,
+                ssl: true,
+                tlsAllowInvalidCertificates: true, // For Railway compatibility
+                tlsInsecure: false,
+                socketTimeoutMS: 45000,
+                serverSelectionTimeoutMS: 10000,
+                connectTimeoutMS: 10000,
             });
 
             await mongoClient.connect();

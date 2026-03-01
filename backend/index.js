@@ -34,7 +34,13 @@ async function startServer() {
         await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            dbName: 'attendance_main'
+            dbName: 'attendance_main',
+            ssl: true,
+            tlsAllowInvalidCertificates: true,
+            retryWrites: true,
+            retryReads: true,
+            socketTimeoutMS: 45000,
+            serverSelectionTimeoutMS: 10000,
         });
         console.log('✅ Connected to Mongoose (attendance_main)');
 
