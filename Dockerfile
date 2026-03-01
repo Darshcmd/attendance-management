@@ -9,6 +9,15 @@ COPY frontend/package*.json ./
 RUN npm ci
 
 COPY frontend/ ./
+
+# Set production environment variable for build
+ENV REACT_APP_BASE_URL=""
+ENV NODE_ENV=production
+
+# Clean old builds
+RUN rm -rf build
+
+# Build the frontend
 RUN npm run build
 
 # Stage 2: Build and Run Backend with Frontend
